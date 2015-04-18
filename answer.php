@@ -11,7 +11,7 @@
 		<?php
 		$checking_account=$_POST["your_account"]."<br>";
 		$checking_password=$_POST["your_password"]."<br>";
-		if ($checking_account == "seisyo1234" and $checking_password == 12345678) {
+		if ($checking_account != "seisyo1234" or $checking_password != "12345678") {
 			echo "登入成功！";
 		}
 		else {
