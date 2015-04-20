@@ -6,10 +6,9 @@
 	<center>
 		<?php
 		session_start();
-		if ($_SESSION["username"] != null){
-			echo '<a href="logout.php">登出</a>';
-			
-		}
+		session_unset();
+		echo "登出中........";
+		echo '<meta http-equiv=REFRESH CONTENT=1;url=index.html>';
 		?>
 	</center>
 </body>	

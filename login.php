@@ -38,6 +38,7 @@
 			if ($_SESSION["accountIn"] != null && $_SESSION["passwordIn"] != null && (String)$resultarr[1] == (String)$_SESSION["accountIn"] && (String)$resultarr[2] == (String)$_SESSION["passwordIn"]){
 				$_SESSION["username"] = $_SESSION["accountIn"];
 				echo "登入成功！";
+				echo '<meta http-equiv=REFRESH CONTENT=1;url=member.php>';
 			}
 			else{
 				// var_dump($_SESSION["accountIn"] != null);
@@ -45,8 +46,8 @@
 				// var_dump((String)$resultarr[1] == (String)$_SESSION["accountIn"]);
 				// var_dump((String)$resultarr[2] == (String)$_SESSION["passwordIn"]);
 				echo "登入失敗！";
+				echo '<meta http-equiv=REFRESH CONTENT=1;url=index.html>';
 			}
-			session_unset();
 		?>
 	</center>
 </body>
