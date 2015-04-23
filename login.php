@@ -7,10 +7,7 @@ session_start();
 	<title>Answer Page</title>
 </head>
 <body>
-	<hr>
 	<center>
-		<h3>登入結果</h3>
-		<hr>
 		<?php
 		//頁面輸入的帳號及密碼紀錄
 		$accountIn = $_POST["your_account"];
@@ -28,17 +25,20 @@ session_start();
 			if ($resultarr[0] == $passwordIn){
 				$_SESSION["username"] = $accountIn;
 				$_SESSION["checkok"] = true;
-				echo '<meta http-equiv=REFRESH CONTENT=1;url=member.php>';
+				header("Location:member.php");
+				//echo '<meta http-equiv=REFRESH CONTENT=1;url=member.php>';
 
 			}
 			else{
 				echo "登入失敗！";
-				echo '<meta http-equiv=REFRESH CONTENT=1;url=index.html>';
+				header("Location:index.php");
+				//echo '<meta http-equiv=REFRESH CONTENT=1;url=index.php>';
 			}
 		}
 		else{//輸入為空
 			echo "輸入請勿是空";
-			echo '<meta http-equiv=REFRESH CONTENT=1;url=index.html>';
+			header("Location:member.php");
+			//echo '<meta http-equiv=REFRESH CONTENT=1;url=index.php>';
 		
 		}
 

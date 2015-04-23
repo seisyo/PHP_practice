@@ -1,9 +1,5 @@
-<?php//如果有登入就直接進member.php
-session_start();
-$_SESSION["checkok"] = false;
-if($_SESSION["checkok"] == true){
-	echo '<meta http-equiv=REFRESH CONTENT=1;url=member.php>';
-}
+<?php
+session_start();//如果有登入就直接進member.php
 ?>
 <html>
 <head>
@@ -12,6 +8,12 @@ if($_SESSION["checkok"] == true){
 </head>
 <body>
 	<center>
+		<?php
+		$_SESSION["checkok"] = false;
+		if($_SESSION["checkok"] == true){
+		echo '<meta http-equiv=REFRESH CONTENT=1;url=member.php>';
+		}
+		?>
 		<h1>留言板登入系統</h1>
 		<hr>
 		<FORM method="post" action="login.php">

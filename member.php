@@ -10,12 +10,13 @@ session_start();
 		<?php
 		include("sql_connection.php");//
 		if (isset($_SESSION["username"]) && $_SESSION["checkok"] == true){
-			echo '<a href="logout.php">登出</a>';
-			
+			header("Location:suggest.php");
+			//echo '<meta http-equiv=REFRESH CONTENT=1;url=suggest.php>';
 		}
 		else{
 			echo "請登入";
-			echo '<meta http-equiv=REFRESH CONTENT=1;url=index.html>';
+			header("Location:index.php");
+			//echo '<meta http-equiv=REFRESH CONTENT=1;url=index.php>';
 		}
 		?>
 	</center>

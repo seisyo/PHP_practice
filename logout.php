@@ -9,8 +9,8 @@ session_start();
 	<center>
 		<?php
 		$_SESSION["checkok"] = false;
-		echo "登出中........";
-		echo '<meta http-equiv=REFRESH CONTENT=1;url=index.html>';
+		header("Location:index.php");
+		//echo '<meta http-equiv=REFRESH CONTENT=1;url=index.php>';
 		?>
 	</center>
 </body>	
