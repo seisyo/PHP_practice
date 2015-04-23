@@ -8,11 +8,14 @@ session_start();
 <body>
 	<center>
 		<?php
-		session_start();
 		include("sql_connection.php");//
-		if ($_SESSION["username"] != null && $_SESSION["checkok"] = true){
+		if (isset($_SESSION["username"]) && $_SESSION["checkok"] == true){
 			echo '<a href="logout.php">登出</a>';
 			
+		}
+		else{
+			echo "請登入";
+			echo '<meta http-equiv=REFRESH CONTENT=1;url=index.html>';
 		}
 		?>
 	</center>

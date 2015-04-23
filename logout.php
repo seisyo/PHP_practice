@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <html>
 <head>
 	<meta charset="utf-8">
@@ -5,8 +8,7 @@
 <body>
 	<center>
 		<?php
-		session_start();
-		session_unset();
+		$_SESSION["checkok"] = false;
 		echo "登出中........";
 		echo '<meta http-equiv=REFRESH CONTENT=1;url=index.html>';
 		?>

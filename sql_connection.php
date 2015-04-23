@@ -1,16 +1,13 @@
 <?php
 	//資料庫設定
 	$db_server = "127.0.0.1";
-	$db_name = "member";
-	$db_user = "root";
-	$db_password = "12345678";
+	$db_name = "rakuda_seisyo";
+	$db_user = "rakuda";
+	$db_password = "QzcE2BXsyp6nU3MD";
 
 	//資料庫連線
 	if (!mysql_connect($db_server, $db_user, $db_password)){
-		die("無法連線！");
+		echo("無法連線！");
 	}
-	else{
-		echo "成功連線！";
-	}	
 	mysql_query("SET NAMES utf8");
 ?>

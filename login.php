@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <html>
 <head>
 	<meta charset="utf-8">
@@ -9,32 +12,36 @@
 		<h3>登入結果</h3>
 		<hr>
 		<?php
-			session_start();
-			//頁面輸入的帳號及密碼紀錄
-			$accountIn = $_POST["your_account"];
-			$passwordIn = $_POST["your_password"];
-			$_SESSION["checkok"] = false;
-			
-			include("sql_connection.php");//
-
+		//頁面輸入的帳號及密碼紀錄
+		$accountIn = $_POST["your_account"];
+		$passwordIn = md5($_POST["your_password"]);
+		//和資料庫連線檢查
+		include("sql_connection.php");
+		//判斷輸入是否為空
+		if($accountIn != null && $passwordIn != null){//輸入不為空
 			//資料去搜尋此帳號資料
-			// $temp = mysql_query("select * from `member`.`accpass` where `account` = '".$_SESSION["accountIn"]."';");
-			$sql = "select * from `member`.`accpass` where `account` = '{$accountIn}';";
-			echo $sql;
+			$sql = "select `md5_password` from `rakuda_seisyo`.`login` where `account` = '{$accountIn}';";
 			$temp = mysql_query($sql);
 			$resultarr = mysql_fetch_row($temp);		
 			//var_dump($resultarr);
-			//判斷帳號及密碼是否符合
-			if ($accountIn != null && $passwordIn != null && $resultarr[1] == $accountIn && $resultarr[2] == $passwordIn){
+			//判斷密碼是否符合
+			if ($resultarr[0] == $passwordIn){
 				$_SESSION["username"] = $accountIn;
-				echo "登入成功！";
-				echo '<meta http-equiv=REFRESH CONTENT=1;url=member.php>';
 				$_SESSION["checkok"] = true;
+				echo '<meta http-equiv=REFRESH CONTENT=1;url=member.php>';
+
 			}
 			else{
 				echo "登入失敗！";
 				echo '<meta http-equiv=REFRESH CONTENT=1;url=index.html>';
 			}
+		}
+		else{//輸入為空
+			echo "輸入請勿是空";
+			echo '<meta http-equiv=REFRESH CONTENT=1;url=index.html>';
+		
+		}
+
 		?>
 	</center>
 </body>
