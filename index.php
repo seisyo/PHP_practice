@@ -9,10 +9,7 @@ session_start();//如果有登入就直接進member.php
 <body>
 	<center>
 		<?php
-		$_SESSION["checkok"] = false;
-		if($_SESSION["checkok"] == true){
-		echo '<meta http-equiv=REFRESH CONTENT=1;url=member.php>';
-		}
+		include("msg.php");
 		?>
 		<h1>留言板登入系統</h1>
 		<hr>

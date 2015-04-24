@@ -2,6 +2,7 @@
 session_start();
 if($_SESSION["checkok"] != true){
 	header("Location:index.php");
+	$_SESSION["msg"] = "請登入";
 	//echo '<meta http-equiv=REFRESH CONTENT=1;url=index.php>';
 }
 ?>
@@ -12,7 +13,7 @@ if($_SESSION["checkok"] != true){
 </head>
 <body>
 	<center>
-		<a href="post.php">--留言紀錄--</a>
+		<a href="view.php">--留言紀錄--</a>
 		<a href="logout.php">登出--</a>
 		<hr>
 		<form name="form1" method="post" action="add.php">
@@ -22,7 +23,7 @@ if($_SESSION["checkok"] != true){
 			echo $_SESSION["username"];
 			?>
 			<br>
-			內容：
+			內容(150字以下)：
 			<br>
 			<textarea rows=10 name="content"></textarea><br>
 			<input type="submit" name="Submit" value="送出">

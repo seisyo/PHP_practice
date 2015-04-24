@@ -37,11 +37,9 @@ session_start();
 		}
 		else{//輸入為空
 			echo "輸入請勿是空";
-			header("Location:member.php");
+			header("Location:index.php");
 			//echo '<meta http-equiv=REFRESH CONTENT=1;url=index.php>';
-		
 		}
-
 		?>
 	</center>
 </body>
