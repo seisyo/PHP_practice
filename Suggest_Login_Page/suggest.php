@@ -34,6 +34,3 @@ if($_SESSION["checkok"] != true){
 	
 </body>
 </html>
-<?php
-
-?>

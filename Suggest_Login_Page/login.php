@@ -22,13 +22,13 @@ if(isset($accountIn) && isset($passwordIn)){//輸入不為空
 		//echo '<meta http-equiv=REFRESH CONTENT=1;url=member.php>';
 	}
 	else{
-		$_SESSION["msg"] = "登入失敗";
+		echo "登入失敗！";
 		header("Location:index.php");
 		//echo '<meta http-equiv=REFRESH CONTENT=1;url=index.php>';
 	}
 }
 else{//輸入為空
-	$_SESSION["msg"] = "輸入不能空白";
+	echo "輸入請勿是空";
 	header("Location:index.php");
 	//echo '<meta http-equiv=REFRESH CONTENT=1;url=index.php>';
 }

@@ -10,6 +10,7 @@ session_start();//如果有登入就直接進member.php
 	<center>
 		<?php
 		include("msg.php");
+		notify();
 		?>
 		<h1>留言板登入系統</h1>
 		<hr>

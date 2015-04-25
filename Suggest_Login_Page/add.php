@@ -7,7 +7,6 @@ if($_SESSION["checkok"] != true){
 }
 ?>
 <?php
-	header("Location:suggest.php");
 	$sugname = $_SESSION["username"];
 	$sugcontent = $_POST["content"];
 
@@ -18,4 +17,5 @@ if($_SESSION["checkok"] != true){
 		$sql = "insert into `rakuda_seisyo`.`suggests` (`account`,`content`) values ('{$sugname}','{$sugcontent}');";
 		mysql_query($sql);
 	}
+	header("Location:suggest.php");
 ?>

@@ -5,8 +5,5 @@
 			unset($_SESSION["msg"]);
 			return 1;
 		}
-		else{
-			echo "hahaha";
-		}
 	}
 ?>

@@ -1,6 +1,6 @@
 <?php
 session_start();
-if($_SESSION["checkok"] != true){
+if($_SESSION["checkok"] !== true){
 	header("Location:index.php");
 	$_SESSION["msg"] = "請登入";
 	//echo '<meta http-equiv=REFRESH CONTENT=1;url=index.php>';
